@@ -1,0 +1,13 @@
+.app-container .side-menu .panel.widget .avatar {
+  height: 36px;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand img {
+  width: 36px;
+  height: 36px;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container {
+  width: 50px;
+}
+

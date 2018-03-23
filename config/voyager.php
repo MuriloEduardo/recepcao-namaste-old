@@ -91,7 +91,23 @@ return [
 
     'database' => [
         'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
+            'hidden' => [
+                'migrations',
+                'data_rows',
+                'data_types',
+                'menu_items',
+                'password_resets',
+                'permission_role',
+                'settings',
+                'translations',
+                'roles',
+                'permissions',
+                'permission_groups',
+                'menus',
+                'event_customer',
+                'therapist_customer',
+                'how_did_find_out_customer',
+            ],
         ],
     ],
 
@@ -161,8 +177,10 @@ return [
         ],
 
         'widgets' => [
-            'App\\Widgets\\Users',
-            'App\\Widgets\\Customers'
+            // 'App\\Widgets\\Users',
+            'App\\Widgets\\Customers',
+            'App\\Widgets\\Events',
+            'App\\Widgets\\Therapists',
         ],
 
     ],

@@ -21,7 +21,7 @@ class Customers extends AbstractWidget
     public function run()
     {
         $count = \App\Customer::count();
-        $string = 'Cliente';
+        $string = 'cliente';
 
         if ($count > 1) {
             $string = $string . 's';
@@ -35,7 +35,7 @@ class Customers extends AbstractWidget
                 'text' => 'Ver todos clientes',
                 'link' => '/admin/clientes',
             ],
-            'image' => voyager_asset('images/widget-backgrounds/02.jpg'),
+            'image' => '/storage/backgrounds/customers.jpg',
         ]));
     }
 }

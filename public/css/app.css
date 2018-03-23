@@ -11,3 +11,30 @@
   width: 50px;
 }
 
+.app-container .side-menu .panel.widget a,
+.app-container .side-menu .panel.widget h4,
+.app-container .side-menu .panel.widget p {
+  display: block;
+  text-align: center;
+}
+
+.app-container .side-menu .panel.widget h4 {
+  overflow: initial;
+  height: initial;
+  position: initial;
+  left: initial;
+  top: initial;
+  float: none;
+  width: initial;
+}
+
+.app-container .side-menu .panel.widget .avatar,
+.app-container .side-menu:hover .panel.widget .avatar {
+  float: none;
+  margin: 0;
+}
+
+.side-menu .panel.widget {
+  height: 150px;
+}
+

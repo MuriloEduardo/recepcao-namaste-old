@@ -91,7 +91,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'pt_br',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,13 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        App\Providers\TherapistModelServiceProvider::class,
+        App\Providers\CustomerModelServiceProvider::class,
+        App\Providers\EventModelServiceProvider::class,
+        App\Providers\UserModelServiceProvider::class,
+        App\Providers\CustomerTypeModelServiceProvider::class,
+        App\Providers\HowDidFindOutModelServiceProvider::class,
 
     ],
 

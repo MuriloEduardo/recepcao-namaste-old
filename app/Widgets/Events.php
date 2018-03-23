@@ -5,7 +5,7 @@ namespace App\Widgets;
 use Arrilot\Widgets\AbstractWidget;
 use TCG\Voyager\Facades\Voyager;
 
-class Users extends AbstractWidget
+class Events extends AbstractWidget
 {
     /**
      * The configuration array.
@@ -20,22 +20,22 @@ class Users extends AbstractWidget
      */
     public function run()
     {
-        $count = \App\User::count();
-        $string = 'usuário';
+        $count = \App\Event::count();
+        $string = 'evento';
 
         if ($count > 1) {
             $string = $string . 's';
         }
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-person',
+            'icon'   => 'voyager-pizza',
             'title'  => "{$count} {$string}",
             'text'   => "Você tem {$count} {$string}. Clique no botão abaixo para ver todos.",
             'button' => [
-                'text' => 'Ver todos usuários',
-                'link' => '/admin/usuários',
+                'text' => 'Ver todos eventos',
+                'link' => '/admin/eventos',
             ],
-            'image' => voyager_asset('images/widget-backgrounds/01.jpg'),
+            'image' => '/storage/backgrounds/events.jpg',
         ]));
     }
 }

@@ -177,12 +177,14 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\TherapistModelServiceProvider::class,
+        App\Providers\ProfessionalModelServiceProvider::class,
         App\Providers\CustomerModelServiceProvider::class,
         App\Providers\EventModelServiceProvider::class,
         App\Providers\UserModelServiceProvider::class,
         App\Providers\CustomerTypeModelServiceProvider::class,
         App\Providers\HowDidFindOutModelServiceProvider::class,
+        App\Providers\ProfessionalTypeModelServiceProvider::class,
+        App\Providers\ParticipationModelServiceProvider::class,
 
     ],
 

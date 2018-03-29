@@ -104,9 +104,9 @@ return [
                 'permissions',
                 'permission_groups',
                 'menus',
-                'event_customer',
-                'therapist_customer',
+                'professional_customer',
                 'how_did_find_out_customer',
+                'participation_participants',
             ],
         ],
     ],
@@ -177,10 +177,9 @@ return [
         ],
 
         'widgets' => [
-            // 'App\\Widgets\\Users',
             'App\\Widgets\\Customers',
             'App\\Widgets\\Events',
-            'App\\Widgets\\Therapists',
+            'App\\Widgets\\Professionals',
         ],
 
     ],
@@ -219,7 +218,7 @@ return [
     ],
 
     'additional_js' => [
-        //'js/custom.js',
+        // 'js/custom.js',
     ],
 
     'googlemaps' => [

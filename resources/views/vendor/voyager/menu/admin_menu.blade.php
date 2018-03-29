@@ -1,6 +1,8 @@
 <ul class="nav navbar-nav">
 
 @php
+    $divider = 'header-menu';
+
     if (Voyager::translatable($items)) {
         $items = $items->load('translations');
     }
@@ -48,7 +50,13 @@
         }
         else
         {
-            $linkAttributes =  'href="' . url($href) .'"';
+            if ($href) {
+                $linkAttributes =  'href="' . url($href) .'"';
+            }
+
+            if ($item->icon_class == $divider) {
+                array_push($listItemClass, $divider);
+            }
 
             if(!Auth::user()->can('browse', $item)) {
                 continue;
@@ -58,7 +66,9 @@
 
     <li class="{{ implode(" ", $listItemClass) }}">
         <a {!! $linkAttributes !!} target="{{ $item->target }}">
-            <span class="icon {{ $item->icon_class }}"></span>
+            @if($item->icon_class && $item->icon_class != $divider)
+                <span class="icon {{ $item->icon_class }}"></span>
+            @endif
             <span class="title">{{ $transItem->title }}</span>
         </a>
         @if($hasChildren)

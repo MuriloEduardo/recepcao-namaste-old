@@ -16,12 +16,23 @@ use TCG\Voyager\Events\FileDeleted;
 use TCG\Voyager\Traits\AlertsMessages;
 use Validator;
 
-class Controller extends BaseController
+abstract class Controller extends BaseController
 {
     use DispatchesJobs,
         ValidatesRequests,
         AuthorizesRequests,
         AlertsMessages;
+
+    public function getSlug(Request $request)
+    {
+        if (isset($this->slug)) {
+            $slug = $this->slug;
+        } else {
+            $slug = explode('.', $request->route()->getName())[1];
+        }
+
+        return $slug;
+    }
 
     public function insertUpdateData($request, $slug, $rows, $data)
     {
@@ -155,25 +166,6 @@ class Controller extends BaseController
         }
 
         return Validator::make($request, $rules, $messages, $customAttributes);
-    }
-
-    /**
-     * Get fields having validation rules in proper format.
-     *
-     * @param array $fieldsConfig
-     *
-     * @return \Illuminate\Support\Collection
-     */
-    protected function getFieldsWithValidationRules($fieldsConfig)
-    {
-        return $fieldsConfig->filter(function ($value) {
-            if (empty($value->details)) {
-                return false;
-            }
-            $decoded = json_decode($value->details, true);
-
-            return !empty($decoded['validation']['rule']);
-        });
     }
 
     public function getContentBasedOnType(Request $request, $slug, $row)
@@ -501,4 +493,100 @@ class Controller extends BaseController
 
         return $content;
     }
+
+    private function is_animated_gif($filename)
+    {
+        $raw = file_get_contents($filename);
+
+        $offset = 0;
+        $frames = 0;
+        while ($frames < 2) {
+            $where1 = strpos($raw, "\x00\x21\xF9\x04", $offset);
+            if ($where1 === false) {
+                break;
+            } else {
+                $offset = $where1 + 1;
+                $where2 = strpos($raw, "\x00\x2C", $offset);
+                if ($where2 === false) {
+                    break;
+                } else {
+                    if ($where1 + 8 == $where2) {
+                        $frames++;
+                    }
+                    $offset = $where2 + 1;
+                }
+            }
+        }
+
+        return $frames > 1;
+    }
+
+    public function deleteFileIfExists($path)
+    {
+        if (Storage::disk(config('voyager.storage.disk'))->exists($path)) {
+            Storage::disk(config('voyager.storage.disk'))->delete($path);
+            event(new FileDeleted($path));
+        }
+    }
+
+    /**
+     * Get fields having validation rules in proper format.
+     *
+     * @param array $fieldsConfig
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getFieldsWithValidationRules($fieldsConfig)
+    {
+        return $fieldsConfig->filter(function ($value) {
+            if (empty($value->details)) {
+                return false;
+            }
+            $decoded = json_decode($value->details, true);
+
+            return !empty($decoded['validation']['rule']);
+        });
+    }
+
+    // public function handleRelationshipContent($row, $content){
+
+    //     $options = json_decode($row->details);
+
+    //     switch ($options->type) {
+    //         /********** PASSWORD TYPE **********/
+    //         case 'belongsToMany':
+
+    //             // $pivotContent = [];
+    //             // // Read all values for fields in pivot tables from the request
+    //             // foreach ($options->relationship->editablePivotFields as $pivotField) {
+    //             //     if (!isset($pivotContent[$pivotField])) {
+    //             //         $pivotContent[$pivotField] = [];
+    //             //     }
+    //             //     $pivotContent[$pivotField] = $request->input('pivot_'.$pivotField);
+    //             // }
+    //             // // Create a new content array for updating pivot table
+    //             // $newContent = [];
+    //             // foreach ($content as $contentIndex => $contentValue) {
+    //             //     $newContent[$contentValue] = [];
+    //             //     foreach ($pivotContent as $pivotContentKey => $value) {
+    //             //         $newContent[$contentValue][$pivotContentKey] = $value[$contentIndex];
+    //             //     }
+    //             // }
+    //             // $content = $newContent;
+
+    //                 return [1];
+
+    //             break;
+
+    //         case 'hasMany':
+
+    //         default:
+
+    //             return $content;
+
+    //     }
+
+    //     return $content;
+
+    // }
 }

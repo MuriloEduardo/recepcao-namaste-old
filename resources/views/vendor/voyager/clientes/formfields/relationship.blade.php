@@ -21,7 +21,7 @@
             	@if(isset($query))
 					<p>{{ $query->{$options->label} }}</p>
 				@else
-					<p>Sem resultados</p>
+					<p>No results</p>
 				@endif
 
 			@else
@@ -71,13 +71,13 @@
 	            		if(strlen($string_values) > 25){ $string_values = substr($string_values, 0, 25) . '...'; } 
 	            	@endphp
 	            	@if(empty($selected_values))
-		            	<p>Sem resultados</p>
+		            	<p>No results</p>
 		            @else
 	            		<p>{{ $string_values }}</p>
 	            	@endif
 	            @else
 	            	@if(empty($selected_values))
-		            	<p>Sem resultados</p>
+		            	<p>No results</p>
 		            @else
 		            	<ul>
 			            	@foreach($selected_values as $selected_value)
@@ -95,14 +95,51 @@
 				@endphp
 
 				@if(isset($query))
-					<ul>
+					<ul class="list-inline">
 						@foreach($query as $query_res)
-							<li>{{ $query_res->{$options->label} }}</li>
+							
+							<li>
+								@if(get_class($query_res) == 'App\Attachment')
+							
+									@php $attachments = json_decode($query_res->path) @endphp
+
+									@foreach($attachments as $attachment)
+
+										<a href="/admin/anexos/{{ $query_res->id }}">
+											<div class="panel text-center">
+												<div class="panel-body">
+													@php $path = "storage/" . $attachment->download_link @endphp
+													
+													@if(exif_imagetype($path))
+														<img src="/{{ $path }}" alt="{{ $query_res->title }}" title="{{ $query_res->title }}" class="img-responsive center-block" />
+													
+													@else
+
+														<h1 class="voyager-file-text"></h1>
+
+													@endif
+													
+												</div>
+												<div class="panel-footer">
+													<h5>{{ $query_res->title }}</h5>
+													@if($query_res->active)
+														<span class="label label-default">Anexo Ativo</span>
+													@endif
+												</div>
+											</div>
+										</a>
+
+									@endforeach
+								
+								@else
+									{{ $query_res->{$options->label} }}
+								@endif
+							</li>
 						@endforeach
 					</ul>
 					
 				@else
-					<p>Sem resultados</p>
+					<p>No results</p>
 				@endif
 
 			@endif
@@ -122,13 +159,13 @@
 	            		if(strlen($string_values) > 25){ $string_values = substr($string_values, 0, 25) . '...'; } 
 	            	@endphp
 	            	@if(empty($selected_values))
-		            	<p>Sem resultados</p>
+		            	<p>No results</p>
 		            @else
 	            		<p>{{ $string_values }}</p>
 	            	@endif
 	            @else
 	            	@if(empty($selected_values))
-		            	<p>Sem resultados</p>
+		            	<p>No results</p>
 		            @else
 		            	<ul>
 			            	@foreach($selected_values as $selected_value)

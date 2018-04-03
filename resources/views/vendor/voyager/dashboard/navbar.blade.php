@@ -31,18 +31,12 @@
             </ol>
             @show
         </div>
-        <ul class="nav navbar-nav navbar-right navbar-btn">
-            <div class="btn-group">
-                <button id="btnTxt" type="button" class="btn btn-danger" data-toggle="modal" data-target="#customer-create-modal">Novo cliente</button>
-                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right fast-links" role="menu">
-                    <li><a href="/admin/participacoes/create">Nova participação</a></li>
-                </ul>
-            </div>
-        </ul>
         <ul class="nav navbar-nav navbar-right">
+            @if(!Request::is('admin/participacoes/create'))
+                <li class="fast-link pull-left">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#participation-create-modal">Nova Participação</button>
+                </li>
+            @endif
             <li class="dropdown profile">
                 <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" role="button"
                    aria-expanded="false"><img src="{{ $user_avatar }}" class="profile-img"> <span
@@ -86,36 +80,39 @@
         </ul>
     </div>
 </nav>
-<div id="customer-create-modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">
-            <i class="voyager-people"></i>
-            Adicionar Cliente
-        </h4>
-      </div>
-      <form ref="form" action="/admin/clientes" method="POST">
-        {{ csrf_field() }}
-        <div class="modal-body">
-            <div class="form-group">
-                <label for="name" class="control-label">Nome</label>
-                <input type="text" class="form-control" id="name" name="name" required autofocus>
-            </div>
-            <div class="form-group">
-                <label for="email" class="control-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="phone" class="control-label">Telefone</label>
-                <input type="text" class="form-control" id="phone" name="phone">
+
+@if(!Request::is('admin/participacoes/create'))
+    <div id="participation-create-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        <i class="voyager-list-add"></i>
+                        Adicionar Participação
+                    </h4>
+                </div>
+                @php
+                    $dataType = Voyager::model('DataType')->where('slug', '=', 'participacoes')->first();
+
+                    $dataTypeContent = (strlen($dataType->model_name) != 0)
+                                ? new $dataType->model_name()
+                                : false;
+
+                    foreach ($dataType->addRows as $key => $row) {
+                        $details = json_decode($row->details);
+                        $dataType->addRows[$key]['col_width'] = isset($details->width) ? $details->width : 100;
+                    }
+
+                    // If a column has a relationship associated with it, we do not want to show that field
+                    App\Http\Controllers\Traits\BreadRelationshipParser::removeRelationshipField($dataType, 'add');
+
+                    // Check if BREAD is Translatable
+                    $isModelTranslatable = is_bread_translatable($dataTypeContent);
+                @endphp
+
+                @include('vendor.voyager.participacoes.form', compact('dataType', 'dataTypeContent', 'isModelTranslatable'))
             </div>
         </div>
-        <div class="modal-footer text-left">
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </div>
-      </form>
     </div>
-  </div>
-</div>
+@endif

@@ -19,10 +19,12 @@ Route::group(['prefix' => 'admin'], function () {
 
     Voyager::routes();
 
-    Route::resource('/relatorios', 'Report');
+    Route::resource('/relatorios', 'ReportController');
 });
 
 Route::group(['prefix' => 'api'], function () {
-    
-    Route::resource('/eventos', 'Event');
+
+    Route::resource('/customers', 'CustomerController');
+
+    Route::resource('/professionals', 'ProfessionalController');
 });

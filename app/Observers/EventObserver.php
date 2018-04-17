@@ -12,13 +12,13 @@ class EventObserver
      * @param Event $event
      * @return void
      */
-    public function creating(Event $event)
-    {
-        $id = auth()->user() ? auth()->user()->id : null;
+    // public function creating(Event $event)
+    // {
+    //     $id = auth()->user() ? auth()->user()->id : null;
         
-        $event->created_id = $id;
-        $event->updated_id = $id;
-    }
+    //     $event->created_id = $id;
+    //     $event->updated_id = $id;
+    // }
 
     /**
      * Listen to the Event updating event.
@@ -26,8 +26,8 @@ class EventObserver
      * @param Event $event
      * @return void
      */
-    public function updating(Event $event)
-    {
-        $event->updated_id = auth()->user() ? auth()->user()->id : null;
-    }
+    // public function updating(Event $event)
+    // {
+    //     $event->updated_id = auth()->user() ? auth()->user()->id : null;
+    // }
 }

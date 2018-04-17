@@ -19,7 +19,7 @@
                  style="background-image:url({{ Voyager::image( Voyager::setting('admin.bg_image'), config('voyager.assets_path') . '/images/bg.jpg' ) }}); background-size: cover; background-position: 0px;">
                 <div class="dimmer"></div>
                 <div class="panel-content">
-                    <img src="{{ $user_avatar }}" class="avatar" alt="{{ Auth::user()->name }} avatar">
+                    <div class="avatar profile-first-letter">{{ Auth::user()->name[0] }}</div>
                     <h4>{{ ucwords(Auth::user()->name) }}</h4>
                     <p>{{ Auth::user()->email }}</p>
                     <small>{{ Auth::user()->role->display_name }}</small>

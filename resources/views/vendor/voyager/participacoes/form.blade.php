@@ -36,7 +36,7 @@
             @if ($options && isset($options->formfields_custom))
                 @include('voyager::formfields.custom.' . $options->formfields_custom)
             @else
-                <div class="form-group @if($row->type == 'hidden') hidden @endif @if(isset($display_options->width)){{ 'col-md-' . $display_options->width }}@else{{ '' }}@endif" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                <div class="form-group {{ strtolower(preg_replace('/\s+/', '', $row->display_name)) }} @if($row->type == 'hidden') hidden @endif @if(isset($display_options->width)){{ 'col-md-' . $display_options->width }}@else{{ '' }}@endif" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                     {{ $row->slugify }}
                     <label for="name">{{ $row->display_name }}</label>
                     @include('voyager::multilingual.input-hidden-bread-edit-add')
@@ -74,18 +74,41 @@
 
         $('document').ready(function () {
 
-            let elEventSelect = $('.select2[name="event_id"]'),
-                eventModal = $('#event-create-modal');
+            let elEventSelect = $('select.select2[name="event_id"]'),
+                elCustomerSelect = $('select.select2[name="participation_belongsto_customer_relationship_1[]"]'),
+                elProfessionalSelect = $('select.select2[name="participation_belongstomany_professional_relationship[]"]'),
+                customerModal = $('#customer-create-modal'),
+                professionalModal = $('#professional-create-modal');
 
-            elEventSelect.select2({
+            elEventSelect
+                .select2({
+                    placeholder: 'Selecione o evento',
+                    language: {
+                        noResults: function(){
+                            let newTag = elEventSelect.data('select2').$dropdown.find("input").val();
+                            return `
+                                <div id="newNoResults">
+                                    <div class="noResults">Nenhum resultado encontrado</div>
+                                </div>
+                            `;
+                        }
+                    },
+                    escapeMarkup: function (markup) {
+                        return markup;
+                    }
+                });
+
+            elCustomerSelect.select2({
+                placeholder: 'Selecione quais clientes participaram deste evento',
+                allowClear: true,
                 language: {
-                    noResults: function(e){
-                        let newTag = elEventSelect.data('select2').$dropdown.find("input").val();
+                    noResults: function(){
+                        let newTag = $('.form-group.clientes input.select2-search__field').val();
                         return `
                             <div id="newNoResults">
                                 <div class="noResults">Nenhum resultado encontrado</div>
                                 <div class="createNew">
-                                    <a href="#event-create-modal" data-event-name="` + newTag + `" data-toggle="modal" data-target="#event-create-modal">Criar novo evento: <strong>` + newTag + `</strong></a>
+                                    <a href="#customer-create-modal" data-keyboard="true" data-customer-name="` + newTag + `" data-toggle="modal" data-target="#customer-create-modal">Criar novo cliente: <strong>` + newTag + `</strong></a>
                                 </div>
                             </div>
                         `;
@@ -96,53 +119,112 @@
                 }
             });
 
-            $('#submit-event-create').on('click', function(){
+            elProfessionalSelect.select2({
+                placeholder: 'Selecione quais profissionais participaram deste evento',
+                allowClear: true,
+                language: {
+                    noResults: function(){
+                        let newTag = $('.form-group.profissionais input.select2-search__field').val();
+                        return `
+                            <div id="newNoResults">
+                                <div class="noResults">Nenhum resultado encontrado</div>
+                                <div class="createNew">
+                                    <a href="#professional-create-modal" data-keyboard="true" data-professional-name="` + newTag + `" data-toggle="modal" data-target="#professional-create-modal">Criar novo profissional: <strong>` + newTag + `</strong></a>
+                                </div>
+                            </div>
+                        `;
+                    }
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                }
+            });
 
-                $('#submit-event-create .save').hide();
-                $('#submit-event-create .keeping').removeClass('hidden');
+            $('#submit-customer-create').on('click', function(){
+
+                $('#submit-customer-create .save').hide();
+                $('#submit-customer-create .keeping').removeClass('hidden');
 
                 params = {
-                    name: $('#event-create-modal input[name="name"]').val(),
+                    name: $('#customer-create-modal input[name="name"]').val(),
                     _token: '{{ csrf_token() }}'
                 };
 
-                $.post('/api/eventos', params, function(data, status){
+                $.post('/api/customers', params, function(data, status){
 
                     if (status == 'success') {
 
-                        $('#submit-event-create .save').show();
-                        $('#submit-event-create .keeping').addClass('hidden');
+                        $('#submit-customer-create .save').show();
+                        $('#submit-customer-create .keeping').addClass('hidden');
                         
-                        toastr.success('Evento ' + data.name + ' criado com sucesso!');
+                        toastr.success('Cliente ' + data.name + ' criado com sucesso!');
 
                         let newOption = new Option(data.name, data.id, true, true);
-                        elEventSelect.append(newOption).trigger('change');
+                        elCustomerSelect.append(newOption).trigger('change');
 
-                        eventModal.modal('toggle');
+                        customerModal.modal('toggle');
                     } else {
                         toastr.error('Algo deu errado.');
                     }
                 });
             });
 
-            eventModal.on('show.bs.modal', function(e) {
+            $('#submit-professional-create').on('click', function(){
+
+                $('#submit-professional-create .save').hide();
+                $('#submit-professional-create .keeping').removeClass('hidden');
+
+                params = {
+                    name: $('#professional-create-modal input[name="name"]').val(),
+                    _token: '{{ csrf_token() }}'
+                };
+
+                $.post('/api/professionals', params, function(data, status){
+
+                    if (status == 'success') {
+
+                        $('#submit-professional-create .save').show();
+                        $('#submit-professional-create .keeping').addClass('hidden');
+                        
+                        toastr.success('Profissional ' + data.name + ' criado com sucesso!');
+
+                        let newOption = new Option(data.name, data.id, true, true);
+                        elProfessionalSelect.append(newOption).trigger('change');
+
+                        professionalModal.modal('toggle');
+                    } else {
+                        toastr.error('Algo deu errado.');
+                    }
+                });
+            });
+
+            customerModal.on('show.bs.modal', function(e) {
 
                 //get data-id attribute of the clicked element
-                var eventName = $(e.relatedTarget).data('event-name');
+                var customerName = $(e.relatedTarget).data('customer-name');
 
                 //populate the textbox
-                $(e.currentTarget).find('input[name="name"]').val(eventName);
+                $(e.currentTarget).find('input[name="name"]').val(customerName);
+            });
+
+            professionalModal.on('show.bs.modal', function(e) {
+
+                //get data-id attribute of the clicked element
+                var professionalName = $(e.relatedTarget).data('professional-name');
+
+                //populate the textbox
+                $(e.currentTarget).find('input[name="name"]').val(professionalName);
             });
         });
     </script>
 @stop
 
-<div id="event-create-modal" class="modal fade" role="dialog">
+<div id="customer-create-modal" class="modal fade" role="dialog" tabindex='-1'>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Criar novo evento rapidamente</h4>
+        <h4 class="modal-title">Criar novo cliente rapidamente</h4>
       </div>
       <form ref="form">
         {{ csrf_field() }}
@@ -153,7 +235,33 @@
             </div>
         </div>
         <div class="modal-footer text-left">
-            <button type="button" id="submit-event-create" class="btn btn-primary login-button">
+            <button type="button" id="submit-customer-create" class="btn btn-primary login-button">
+                <span class="keeping hidden"><span class="voyager-refresh"></span> Guardando...</span>
+                <span class="save">Guardar</span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="professional-create-modal" class="modal fade" role="dialog" tabindex='-1'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Criar novo profissional rapidamente</h4>
+      </div>
+      <form ref="form">
+        {{ csrf_field() }}
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input required="" type="text" class="form-control" name="name" placeholder="Nome" autofocus>
+            </div>
+        </div>
+        <div class="modal-footer text-left">
+            <button type="button" id="submit-professional-create" class="btn btn-primary login-button">
                 <span class="keeping hidden"><span class="voyager-refresh"></span> Guardando...</span>
                 <span class="save">Guardar</span>
             </button>

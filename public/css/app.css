@@ -1,5 +1,8 @@
 .app-container .side-menu .panel.widget .avatar {
   height: 36px;
+  line-height: 34px;
+  display: inline-block;
+  font-size: 1.4em;
 }
 
 .app-container .content-container .side-menu .navbar-header .navbar-brand img {
@@ -143,5 +146,82 @@ nav#navbar .navbar-nav.navbar-right {
 
 .select2-dropdown {
   z-index: 9001;
+}
+
+.profile .dropdown-toggle .profile-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 26px;
+}
+
+.profile-first-letter {
+  background-color: #fff;
+  text-align: center;
+  border: solid 2px #ea5036 !important;
+  color: #ea5036;
+  font-weight: bold;
+}
+
+.voyager .navbar .navbar-nav > li:hover > a,
+.voyager .navbar.navbar-default .navbar-nav > li:hover > a,
+.voyager .navbar .navbar-nav > li.open > a,
+.voyager .navbar.navbar-default .navbar-nav > li.open > a {
+  color: #ea5036;
+}
+
+.navbar .dropdown.profile .dropdown-menu {
+  position: absolute !important;
+}
+
+.navbar .dropdown.profile .dropdown-menu li.profile-img .profile-img {
+  height: 60px;
+  width: 60px;
+  float: left;
+  border-radius: 50%;
+  margin-right: 10px;
+  line-height: 56px;
+  font-size: 2em;
+}
+
+.profile-page {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-width: 5px !important;
+  line-height: 142px;
+  font-size: 5em;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.app-container.expanded .content-container .side-menu .navbar-header .navbar-brand .title {
+  left: 0;
+  margin-left: 0;
+}
+
+.app-container .content-container .side-menu .navbar-header .navbar-brand .logo-icon-container {
+  width: 50px;
+}
+
+.navbar .dropdown.profile .dropdown-menu h5 {
+  font-weight: 200;
+  width: 115px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar .navbar-nav > li > a {
+  text-transform: initial;
+}
+
+body.participacoes.modal-open .select2-container {
+  z-index: 99999 !important;
+}
+
+.select2-dropdown {
+  z-index: 999999;
 }
 

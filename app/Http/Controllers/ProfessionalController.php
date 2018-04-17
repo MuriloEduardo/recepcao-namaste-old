@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Report extends Controller
+class ProfessionalController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,7 +23,7 @@ class Report extends Controller
      */
     public function index()
     {
-        return view('reports.browse');
+        //
     }
 
     /**
@@ -44,18 +44,34 @@ class Report extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $slug = 'profissionais';
+
+        $dataType = \Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        // Check permission
+        $this->authorize('add', app($dataType->model_name));
+
+        // Validate fields with ajax
+        $val = $this->validateBread($request->all(), $dataType->addRows);
+
+        if ($val->fails()) {
+            return response()->json(['errors' => $val->messages()]);
+        }
+
+        $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+
+        return response()->json($data);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        return view('reports.' . $slug . '.browse', ['professionals' => \App\Professional::all()]);
+        //
     }
 
     /**

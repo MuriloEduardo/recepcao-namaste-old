@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Event extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,7 +15,7 @@ class Event extends Controller
     {
         $this->middleware('admin.user');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +23,7 @@ class Event extends Controller
      */
     public function index()
     {
-        return 'uhuuuuul';
+        //
     }
 
     /**
@@ -37,15 +37,14 @@ class Event extends Controller
     }
 
     /**
-     * POST BRE(A)D - Store data.
+     * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $slug = 'eventos';
+        $slug = 'clientes';
 
         $dataType = \Voyager::model('DataType')->where('slug', '=', $slug)->first();
 

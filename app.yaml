@@ -6,7 +6,7 @@ runtime_config:
 
 # Ensure we skip ".env", which is only for local development
 skip_files:
-  - .env
+  .env
 
 env_variables:
   # Put production environment variables here.
@@ -22,7 +22,7 @@ env_variables:
   DB_DATABASE: reception
   DB_USERNAME: reception
   DB_PASSWORD: reception
-  DB_SOCKET: "/cloudsql/recepcao-namaste:us-central1:dbserver"
+  DB_SOCKET: "/cloudsql/recepcao-namaste-201319:us-central1:mysql"
 
 beta_settings:
-  cloud_sql_instances: "recepcao-namaste:us-central1:dbserver"
+  cloud_sql_instances: "recepcao-namaste-201319:us-central1:mysql"

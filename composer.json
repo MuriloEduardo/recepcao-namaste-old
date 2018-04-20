@@ -54,8 +54,8 @@
             "@php artisan package:discover"
         ],
         "post-install-cmd": [
-            "chmod -R 755 bootstrap\/cache",
-            "php artisan cache:clear"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "@php artisan optimize"
         ]
     },
     "config": {

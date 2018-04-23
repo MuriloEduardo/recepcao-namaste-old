@@ -289,51 +289,6 @@ class PermissionsTableSeeder extends Seeder
             ),
             30 => 
             array (
-                'id' => 51,
-                'key' => 'browse_therapists',
-                'table_name' => 'therapists',
-                'created_at' => '2018-03-23 12:56:14',
-                'updated_at' => '2018-03-23 12:56:14',
-                'permission_group_id' => NULL,
-            ),
-            31 => 
-            array (
-                'id' => 52,
-                'key' => 'read_therapists',
-                'table_name' => 'therapists',
-                'created_at' => '2018-03-23 12:56:14',
-                'updated_at' => '2018-03-23 12:56:14',
-                'permission_group_id' => NULL,
-            ),
-            32 => 
-            array (
-                'id' => 53,
-                'key' => 'edit_therapists',
-                'table_name' => 'therapists',
-                'created_at' => '2018-03-23 12:56:14',
-                'updated_at' => '2018-03-23 12:56:14',
-                'permission_group_id' => NULL,
-            ),
-            33 => 
-            array (
-                'id' => 54,
-                'key' => 'add_therapists',
-                'table_name' => 'therapists',
-                'created_at' => '2018-03-23 12:56:14',
-                'updated_at' => '2018-03-23 12:56:14',
-                'permission_group_id' => NULL,
-            ),
-            34 => 
-            array (
-                'id' => 55,
-                'key' => 'delete_therapists',
-                'table_name' => 'therapists',
-                'created_at' => '2018-03-23 12:56:14',
-                'updated_at' => '2018-03-23 12:56:14',
-                'permission_group_id' => NULL,
-            ),
-            35 => 
-            array (
                 'id' => 56,
                 'key' => 'browse_customers',
                 'table_name' => 'customers',
@@ -341,7 +296,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 15:22:05',
                 'permission_group_id' => NULL,
             ),
-            36 => 
+            31 => 
             array (
                 'id' => 57,
                 'key' => 'read_customers',
@@ -350,7 +305,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 15:22:05',
                 'permission_group_id' => NULL,
             ),
-            37 => 
+            32 => 
             array (
                 'id' => 58,
                 'key' => 'edit_customers',
@@ -359,7 +314,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 15:22:05',
                 'permission_group_id' => NULL,
             ),
-            38 => 
+            33 => 
             array (
                 'id' => 59,
                 'key' => 'add_customers',
@@ -368,7 +323,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 15:22:05',
                 'permission_group_id' => NULL,
             ),
-            39 => 
+            34 => 
             array (
                 'id' => 60,
                 'key' => 'delete_customers',
@@ -377,7 +332,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 15:22:05',
                 'permission_group_id' => NULL,
             ),
-            40 => 
+            35 => 
             array (
                 'id' => 61,
                 'key' => 'browse_customer_types',
@@ -386,7 +341,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:02:22',
                 'permission_group_id' => NULL,
             ),
-            41 => 
+            36 => 
             array (
                 'id' => 62,
                 'key' => 'read_customer_types',
@@ -395,7 +350,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:02:22',
                 'permission_group_id' => NULL,
             ),
-            42 => 
+            37 => 
             array (
                 'id' => 63,
                 'key' => 'edit_customer_types',
@@ -404,7 +359,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:02:22',
                 'permission_group_id' => NULL,
             ),
-            43 => 
+            38 => 
             array (
                 'id' => 64,
                 'key' => 'add_customer_types',
@@ -413,7 +368,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:02:22',
                 'permission_group_id' => NULL,
             ),
-            44 => 
+            39 => 
             array (
                 'id' => 65,
                 'key' => 'delete_customer_types',
@@ -422,7 +377,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:02:22',
                 'permission_group_id' => NULL,
             ),
-            45 => 
+            40 => 
             array (
                 'id' => 66,
                 'key' => 'browse_how_did_find_outs',
@@ -431,7 +386,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:09:38',
                 'permission_group_id' => NULL,
             ),
-            46 => 
+            41 => 
             array (
                 'id' => 67,
                 'key' => 'read_how_did_find_outs',
@@ -440,7 +395,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:09:38',
                 'permission_group_id' => NULL,
             ),
-            47 => 
+            42 => 
             array (
                 'id' => 68,
                 'key' => 'edit_how_did_find_outs',
@@ -449,7 +404,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:09:38',
                 'permission_group_id' => NULL,
             ),
-            48 => 
+            43 => 
             array (
                 'id' => 69,
                 'key' => 'add_how_did_find_outs',
@@ -458,7 +413,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:09:38',
                 'permission_group_id' => NULL,
             ),
-            49 => 
+            44 => 
             array (
                 'id' => 70,
                 'key' => 'delete_how_did_find_outs',
@@ -467,7 +422,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-23 19:09:38',
                 'permission_group_id' => NULL,
             ),
-            50 => 
+            45 => 
             array (
                 'id' => 71,
                 'key' => 'browse_professionals',
@@ -476,7 +431,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-24 23:40:58',
                 'permission_group_id' => NULL,
             ),
-            51 => 
+            46 => 
             array (
                 'id' => 72,
                 'key' => 'read_professionals',
@@ -485,7 +440,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-24 23:40:58',
                 'permission_group_id' => NULL,
             ),
-            52 => 
+            47 => 
             array (
                 'id' => 73,
                 'key' => 'edit_professionals',
@@ -494,7 +449,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-24 23:40:58',
                 'permission_group_id' => NULL,
             ),
-            53 => 
+            48 => 
             array (
                 'id' => 74,
                 'key' => 'add_professionals',
@@ -503,7 +458,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-24 23:40:58',
                 'permission_group_id' => NULL,
             ),
-            54 => 
+            49 => 
             array (
                 'id' => 75,
                 'key' => 'delete_professionals',
@@ -512,7 +467,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-24 23:40:58',
                 'permission_group_id' => NULL,
             ),
-            55 => 
+            50 => 
             array (
                 'id' => 81,
                 'key' => 'browse_professional_types',
@@ -521,7 +476,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 14:50:30',
                 'permission_group_id' => NULL,
             ),
-            56 => 
+            51 => 
             array (
                 'id' => 82,
                 'key' => 'read_professional_types',
@@ -530,7 +485,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 14:50:30',
                 'permission_group_id' => NULL,
             ),
-            57 => 
+            52 => 
             array (
                 'id' => 83,
                 'key' => 'edit_professional_types',
@@ -539,7 +494,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 14:50:30',
                 'permission_group_id' => NULL,
             ),
-            58 => 
+            53 => 
             array (
                 'id' => 84,
                 'key' => 'add_professional_types',
@@ -548,7 +503,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 14:50:30',
                 'permission_group_id' => NULL,
             ),
-            59 => 
+            54 => 
             array (
                 'id' => 85,
                 'key' => 'delete_professional_types',
@@ -557,7 +512,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 14:50:30',
                 'permission_group_id' => NULL,
             ),
-            60 => 
+            55 => 
             array (
                 'id' => 91,
                 'key' => 'browse_participations',
@@ -566,7 +521,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 20:58:13',
                 'permission_group_id' => NULL,
             ),
-            61 => 
+            56 => 
             array (
                 'id' => 92,
                 'key' => 'read_participations',
@@ -575,7 +530,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 20:58:13',
                 'permission_group_id' => NULL,
             ),
-            62 => 
+            57 => 
             array (
                 'id' => 93,
                 'key' => 'edit_participations',
@@ -584,7 +539,7 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 20:58:13',
                 'permission_group_id' => NULL,
             ),
-            63 => 
+            58 => 
             array (
                 'id' => 94,
                 'key' => 'add_participations',
@@ -593,13 +548,103 @@ class PermissionsTableSeeder extends Seeder
                 'updated_at' => '2018-03-25 20:58:13',
                 'permission_group_id' => NULL,
             ),
-            64 => 
+            59 => 
             array (
                 'id' => 95,
                 'key' => 'delete_participations',
                 'table_name' => 'participations',
                 'created_at' => '2018-03-25 20:58:13',
                 'updated_at' => '2018-03-25 20:58:13',
+                'permission_group_id' => NULL,
+            ),
+            60 => 
+            array (
+                'id' => 96,
+                'key' => 'browse_attachments',
+                'table_name' => 'attachments',
+                'created_at' => '2018-03-29 15:23:30',
+                'updated_at' => '2018-03-29 15:23:30',
+                'permission_group_id' => NULL,
+            ),
+            61 => 
+            array (
+                'id' => 97,
+                'key' => 'read_attachments',
+                'table_name' => 'attachments',
+                'created_at' => '2018-03-29 15:23:30',
+                'updated_at' => '2018-03-29 15:23:30',
+                'permission_group_id' => NULL,
+            ),
+            62 => 
+            array (
+                'id' => 98,
+                'key' => 'edit_attachments',
+                'table_name' => 'attachments',
+                'created_at' => '2018-03-29 15:23:30',
+                'updated_at' => '2018-03-29 15:23:30',
+                'permission_group_id' => NULL,
+            ),
+            63 => 
+            array (
+                'id' => 99,
+                'key' => 'add_attachments',
+                'table_name' => 'attachments',
+                'created_at' => '2018-03-29 15:23:30',
+                'updated_at' => '2018-03-29 15:23:30',
+                'permission_group_id' => NULL,
+            ),
+            64 => 
+            array (
+                'id' => 100,
+                'key' => 'delete_attachments',
+                'table_name' => 'attachments',
+                'created_at' => '2018-03-29 15:23:30',
+                'updated_at' => '2018-03-29 15:23:30',
+                'permission_group_id' => NULL,
+            ),
+            65 => 
+            array (
+                'id' => 101,
+                'key' => 'browse_events_classifications',
+                'table_name' => 'events_classifications',
+                'created_at' => '2018-04-12 01:21:28',
+                'updated_at' => '2018-04-12 01:21:28',
+                'permission_group_id' => NULL,
+            ),
+            66 => 
+            array (
+                'id' => 102,
+                'key' => 'read_events_classifications',
+                'table_name' => 'events_classifications',
+                'created_at' => '2018-04-12 01:21:28',
+                'updated_at' => '2018-04-12 01:21:28',
+                'permission_group_id' => NULL,
+            ),
+            67 => 
+            array (
+                'id' => 103,
+                'key' => 'edit_events_classifications',
+                'table_name' => 'events_classifications',
+                'created_at' => '2018-04-12 01:21:28',
+                'updated_at' => '2018-04-12 01:21:28',
+                'permission_group_id' => NULL,
+            ),
+            68 => 
+            array (
+                'id' => 104,
+                'key' => 'add_events_classifications',
+                'table_name' => 'events_classifications',
+                'created_at' => '2018-04-12 01:21:28',
+                'updated_at' => '2018-04-12 01:21:28',
+                'permission_group_id' => NULL,
+            ),
+            69 => 
+            array (
+                'id' => 105,
+                'key' => 'delete_events_classifications',
+                'table_name' => 'events_classifications',
+                'created_at' => '2018-04-12 01:21:28',
+                'updated_at' => '2018-04-12 01:21:28',
                 'permission_group_id' => NULL,
             ),
         ));

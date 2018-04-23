@@ -30,9 +30,8 @@ class CreateCustomersTable extends Migration {
 			$table->integer('professional_id')->unsigned()->nullable()->index('customers_therapist_id_index');
 			$table->string('sannyas', 191)->nullable();
 			$table->integer('updated_id')->unsigned()->index();
-			$table->integer('type_id')->unsigned()->nullable()->index();
+			$table->integer('type_id')->unsigned()->nullable()->default(3)->index();
 			$table->integer('how_did_find_out_id')->unsigned()->nullable()->index();
-			$table->string('attachments')->nullable();
 		});
 	}
 

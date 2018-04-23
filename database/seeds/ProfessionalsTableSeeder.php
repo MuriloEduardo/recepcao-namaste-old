@@ -61,6 +61,28 @@ class ProfessionalsTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 2,
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'name' => 'profissional feito com ajax',
+                'sannyas' => NULL,
+                'created_id' => 1,
+                'created_at' => '2018-04-12 05:12:13',
+                'updated_at' => '2018-04-12 05:12:13',
+                'updated_id' => 1,
+                'type_id' => NULL,
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'name' => 'mais um profissional feito com ajax',
+                'sannyas' => NULL,
+                'created_id' => 1,
+                'created_at' => '2018-04-12 05:12:23',
+                'updated_at' => '2018-04-12 05:12:23',
+                'updated_id' => 1,
+                'type_id' => NULL,
+            ),
         ));
         
         

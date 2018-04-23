@@ -38,7 +38,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 1,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             1 => 
             array (
@@ -61,7 +60,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 0,
                 'type_id' => NULL,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             2 => 
             array (
@@ -84,7 +82,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 0,
                 'type_id' => NULL,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             3 => 
             array (
@@ -107,7 +104,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 0,
                 'type_id' => NULL,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             4 => 
             array (
@@ -130,7 +126,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 2,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             5 => 
             array (
@@ -153,7 +148,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 1,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             6 => 
             array (
@@ -176,7 +170,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 2,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             7 => 
             array (
@@ -199,7 +192,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => NULL,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             8 => 
             array (
@@ -222,7 +214,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => NULL,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             9 => 
             array (
@@ -245,7 +236,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 1,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             10 => 
             array (
@@ -268,7 +258,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 3,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             11 => 
             array (
@@ -291,7 +280,6 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 1,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
             ),
             12 => 
             array (
@@ -314,7 +302,72 @@ class CustomersTableSeeder extends Seeder
                 'updated_id' => 1,
                 'type_id' => 1,
                 'how_did_find_out_id' => NULL,
-                'attachments' => NULL,
+            ),
+            13 => 
+            array (
+                'id' => 17,
+                'name' => 'cliente feito com ajax',
+                'email' => NULL,
+                'phone' => NULL,
+                'cpf' => NULL,
+                'birth_day' => NULL,
+                'emergency_phone' => NULL,
+                'cep' => NULL,
+                'neighborhood' => NULL,
+                'street' => NULL,
+                'created_at' => '2018-04-12 05:11:51',
+                'updated_at' => '2018-04-12 05:11:51',
+                'number' => NULL,
+                'created_id' => 1,
+                'professional_id' => NULL,
+                'sannyas' => NULL,
+                'updated_id' => 1,
+                'type_id' => NULL,
+                'how_did_find_out_id' => NULL,
+            ),
+            14 => 
+            array (
+                'id' => 18,
+                'name' => 'mais um cliente feito com ajax',
+                'email' => NULL,
+                'phone' => NULL,
+                'cpf' => NULL,
+                'birth_day' => NULL,
+                'emergency_phone' => NULL,
+                'cep' => NULL,
+                'neighborhood' => NULL,
+                'street' => NULL,
+                'created_at' => '2018-04-12 05:12:03',
+                'updated_at' => '2018-04-12 05:12:03',
+                'number' => NULL,
+                'created_id' => 1,
+                'professional_id' => NULL,
+                'sannyas' => NULL,
+                'updated_id' => 1,
+                'type_id' => NULL,
+                'how_did_find_out_id' => NULL,
+            ),
+            15 => 
+            array (
+                'id' => 19,
+                'name' => 'cliente feito do cel android',
+                'email' => NULL,
+                'phone' => NULL,
+                'cpf' => NULL,
+                'birth_day' => NULL,
+                'emergency_phone' => NULL,
+                'cep' => NULL,
+                'neighborhood' => NULL,
+                'street' => NULL,
+                'created_at' => '2018-04-12 18:13:57',
+                'updated_at' => '2018-04-12 18:13:57',
+                'number' => NULL,
+                'created_id' => 1,
+                'professional_id' => NULL,
+                'sannyas' => NULL,
+                'updated_id' => 1,
+                'type_id' => 3,
+                'how_did_find_out_id' => NULL,
             ),
         ));
         

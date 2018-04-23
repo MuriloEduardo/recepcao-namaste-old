@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ParticipationParticipantsTableSeeder extends Seeder
+class CustomerParticipationTableSeeder extends Seeder
 {
 
     /**
@@ -14,9 +14,9 @@ class ParticipationParticipantsTableSeeder extends Seeder
     {
         
 
-        \DB::table('participation_participants')->delete();
+        \DB::table('customer_participation')->delete();
         
-        \DB::table('participation_participants')->insert(array (
+        \DB::table('customer_participation')->insert(array (
             0 => 
             array (
                 'id' => 8,

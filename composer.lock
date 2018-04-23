@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9bfac5aea08c040bb38537d10119096",
+    "content-hash": "e3d0212b0cb943091731e8eaf68288fe",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -3382,44 +3382,43 @@
         },
         {
             "name": "tcg/voyager",
-            "version": "v1.1.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/the-control-group/voyager.git",
-                "reference": "717b31f0368cb3e0cb5468fbca34ca410f8ce0b2"
+                "reference": "1999a18315010b55abbed5e7784887d3a0fa642f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/the-control-group/voyager/zipball/717b31f0368cb3e0cb5468fbca34ca410f8ce0b2",
-                "reference": "717b31f0368cb3e0cb5468fbca34ca410f8ce0b2",
+                "url": "https://api.github.com/repos/the-control-group/voyager/zipball/1999a18315010b55abbed5e7784887d3a0fa642f",
+                "reference": "1999a18315010b55abbed5e7784887d3a0fa642f",
                 "shasum": ""
             },
             "require": {
                 "arrilot/laravel-widgets": "^3.7",
                 "doctrine/dbal": "^2.5",
-                "illuminate/support": "~5.4.0|~5.5.0|~5.6.0",
+                "illuminate/support": "~5.4.0|~5.5.0",
                 "intervention/image": "^2.4",
-                "larapack/doctrine-support": "~0.1.4",
-                "larapack/voyager-hooks": "~1.0.5",
+                "larapack/doctrine-support": "~0.1.2",
+                "larapack/voyager-hooks": "~1.0.2",
                 "league/flysystem": "~1.0.41"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "dev-master",
                 "laravel/browser-kit-testing": "~1.0.0|~2.0.0",
-                "laravel/framework": "~5.4.36|~5.5.0|~5.6.0",
-                "orchestra/database": "~3.4.0|~3.5.0|~3.6.0",
-                "orchestra/testbench": "~3.4.0|~3.5.0|~3.6.0",
-                "orchestra/testbench-browser-kit": "~3.4.0|~3.5.0|~3.6.0",
-                "orchestra/testbench-core": "~3.4.0|~3.5.0|~3.6.0",
-                "phpunit/phpcov": "~3.0|~4.0",
-                "phpunit/phpunit": "~5.7.14|~6.1|~7.0"
+                "laravel/framework": "~5.4.36|~5.5.0",
+                "orchestra/database": "~3.4.0|~3.5.0",
+                "orchestra/testbench": "~3.4.0|~3.5.0",
+                "orchestra/testbench-browser-kit": "~3.4.0|~3.5.0",
+                "orchestra/testbench-core": "~3.4.0|~3.5.0",
+                "phpunit/phpcov": "~3.0|dev-master",
+                "phpunit/phpunit": "~5.7.14|~6.1"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "TCG\\Voyager\\VoyagerServiceProvider",
-                        "TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider"
+                        "TCG\\Voyager\\VoyagerServiceProvider"
                     ]
                 }
             },
@@ -3445,7 +3444,7 @@
                 "laravel",
                 "panel"
             ],
-            "time": "2018-04-19T12:29:25+00:00"
+            "time": "2017-09-19T01:29:54+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

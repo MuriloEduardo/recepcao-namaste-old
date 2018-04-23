@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MenuItemsTableSeeder::class);
         $this->call(MigrationsTableSeeder::class);
         $this->call(ParticipationsTableSeeder::class);
-        $this->call(ParticipationParticipantsTableSeeder::class);
+        $this->call(CustomerParticipationTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(PermissionGroupsTableSeeder::class);

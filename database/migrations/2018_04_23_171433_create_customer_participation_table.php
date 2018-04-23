@@ -12,7 +12,7 @@ class CreateParticipationParticipantsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('participation_participants', function(Blueprint $table)
+		Schema::create('customer_participation', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('customer_id')->unsigned()->nullable()->index();

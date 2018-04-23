@@ -28,8 +28,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
         $this->call(PermissionGroupsTableSeeder::class);
-        $this->call(PermissionRoleTableSeeder::class);
         $this->call(RolesTableSeeder::class);
+        $this->call(PermissionRoleTableSeeder::class);
         $this->call(ProfessionalsTableSeeder::class);
         $this->call(ProfessionalCustomerTableSeeder::class);
         $this->call(ProfessionalTypesTableSeeder::class);

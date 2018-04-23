@@ -106,7 +106,7 @@ return [
                 'menus',
                 'professional_customer',
                 'how_did_find_out_customer',
-                'participation_participants',
+                'customer_participation',
             ],
         ],
     ],

@@ -30,7 +30,7 @@ class CreateCustomerParticipationTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('participation_participants');
+		Schema::drop('customer_participation');
 	}
 
 }

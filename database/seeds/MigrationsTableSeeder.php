@@ -188,7 +188,7 @@ class MigrationsTableSeeder extends Seeder
             28 => 
             array (
                 'id' => 33,
-                'migration' => '2018_03_28_054713_create_participation_participants_table',
+                'migration' => '2018_03_28_054713_create_customer_participation_table',
                 'batch' => 2,
             ),
             29 => 
@@ -338,7 +338,7 @@ class MigrationsTableSeeder extends Seeder
             53 => 
             array (
                 'id' => 58,
-                'migration' => '2018_03_28_153547_create_participation_participants_table',
+                'migration' => '2018_03_28_153547_create_customer_participation_table',
                 'batch' => 0,
             ),
             54 => 
@@ -500,7 +500,7 @@ class MigrationsTableSeeder extends Seeder
             80 => 
             array (
                 'id' => 85,
-                'migration' => '2018_04_23_171433_create_participation_participants_table',
+                'migration' => '2018_04_23_171433_create_customer_participation_table',
                 'batch' => 0,
             ),
             81 => 

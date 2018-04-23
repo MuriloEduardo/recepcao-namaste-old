@@ -1582,7 +1582,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"model":"App\\\\Customer","table":"customers","type":"belongsToMany","column":"id","key":"id","label":"name","pivot_table":"participation_participants","pivot":"1"}',
+                'details' => '{"model":"App\\\\Customer","table":"customers","type":"belongsToMany","column":"id","key":"id","label":"name","pivot_table":"customer_participation","pivot":"1"}',
                 'order' => 7,
             ),
             98 => 
@@ -1630,7 +1630,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"model":"App\\\\Professional","table":"professionals","type":"belongsToMany","column":"id","key":"id","label":"sannyas","pivot_table":"participation_participants","pivot":"1"}',
+                'details' => '{"model":"App\\\\Professional","table":"professionals","type":"belongsToMany","column":"id","key":"id","label":"sannyas","pivot_table":"customer_participation","pivot":"1"}',
                 'order' => 10,
             ),
             101 => 
